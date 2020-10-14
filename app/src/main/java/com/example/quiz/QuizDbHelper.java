@@ -94,35 +94,94 @@ public class QuizDbHelper extends SQLiteOpenHelper {
     }
 
     private void fillQuestionsTable() {
-        Question q1 = new Question("Programming, Easy: A is correct",
-                "A", "B", "C", 1,
-                Question.DIFFICULTY_EASY, Category.PROGRAMMING);
+
+        Question q1 = new Question("أكبر شبه جزيرة في العالم",
+                "شبه الجزيرة العربية", "شبه الجزيرة الأمريكية", "شبه الجزيرة الكورية", 1,
+                Question.DIFFICULTY_EASY, Category.GEOGRAPHY);
         addQuestion(q1);
 
-        Question q2 = new Question("Geography, Medium: B is correct",
-                "A", "B", "C", 2,
-                Question.DIFFICULTY_MEDIUM, Category.GEOGRAPHY);
+        Question q2 = new Question("أطول نهر في العالم",
+                "نهر الامازون", "نهر النيل", "نهر الفرات ", 2,
+                Question.DIFFICULTY_EASY, Category.GEOGRAPHY);
         addQuestion(q2);
 
-        Question q3 = new Question("Math, Hard: C is correct",
-                "A", "B", "C", 3,
-                Question.DIFFICULTY_HARD, Category.MATH);
+        Question q3 = new Question("يلتقي عندها البحر المتوسط بالبحر الأحمر",
+                "رأس الرجاء الصالح", "قناة السبيل", "قناة السويس", 3,
+                Question.DIFFICULTY_EASY, Category.GEOGRAPHY);
         addQuestion(q3);
 
-        Question q4 = new Question("Math, Easy: A is correct",
-                "A", "B", "C", 1,
-                Question.DIFFICULTY_EASY, Category.MATH);
+        Question q4 = new Question(
+                "يحد الجهورية العربية السورية من الغرب",
+                "تركيا",
+                "البحر المتوسط",
+                "العراق",
+                2,
+                Question.DIFFICULTY_EASY, Category.GEOGRAPHY);
         addQuestion(q4);
 
-        Question q5 = new Question("Non existing, Easy: A is correct",
-                "A", "B", "C", 1,
-                Question.DIFFICULTY_EASY, 4);
+        Question q5 = new Question(
+                "صحابي صلى النبي على آله فقال اللهم صلى على آل ابي فلان من هو",
+                "أبو بكر ",
+                "ابن أبي أوفى",
+                "عمر الخطاب ",
+                2,
+                Question.DIFFICULTY_EASY, Category.PROGRAMMING);
         addQuestion(q5);
 
-        Question q6 = new Question("Non existing, Medium: B is correct",
-                "A", "B", "C", 2,
-                Question.DIFFICULTY_MEDIUM, 5);
+        Question q6 = new Question(
+                "صحابي فداه النبي بأبيه وأمه يوم أحد فقال ارم فداك أبي وأمي",
+                "علي بن أبي طالب ",
+                "حمزة بن عبدالمطلب ",
+                "سعد بن مالك",
+                3,
+                Question.DIFFICULTY_EASY, Category.PROGRAMMING);
         addQuestion(q6);
+
+        Question q7 = new Question(
+                "بماذا كانت تسمى المدينة النبوية قبل الهجرة",
+                "يثرب",
+                "مكة",
+                "الطائف",
+                1,
+                Question.DIFFICULTY_EASY, Category.PROGRAMMING);
+        addQuestion(q7);
+
+        Question q8 = new Question(
+                "من هو أبو الأنبياء",
+                "إسماعيل ",
+                "نوح",
+                "إبراهيم",
+                3,
+                Question.DIFFICULTY_EASY, Category.PROGRAMMING);
+        addQuestion(q8);
+
+        Question q9 = new Question(
+                "ما هي أعظم آية في القرآن الكريم",
+                "آية الدين",
+                "آية الكرسي ",
+                "آية الربا",
+                2,
+                Question.DIFFICULTY_EASY, Category.PROGRAMMING);
+        addQuestion(q9);
+
+        Question q10 = new Question(
+                "ما هي أعظم سورة في القرآن الكريم",
+                "الفاتحة",
+                "آل عمران",
+                "البقرة",
+                1,
+                Question.DIFFICULTY_EASY, Category.PROGRAMMING);
+        addQuestion(q10);
+
+        Question q11 = new Question(
+                "سيف سله الله على الكافرين",
+                "علي بن أبي طالب",
+                "خالد بن الوليد",
+                "عمر بن الخطاب",
+                2,
+                Question.DIFFICULTY_EASY, Category.PROGRAMMING);
+        addQuestion(q11);
+
 
     }
 
