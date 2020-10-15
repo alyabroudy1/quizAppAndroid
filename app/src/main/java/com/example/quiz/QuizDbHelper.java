@@ -51,6 +51,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
                 QuestionsTable.COLUMN_OPTION1 + " TEXT, "+
                 QuestionsTable.COLUMN_OPTION2 + " TEXT, "+
                 QuestionsTable.COLUMN_OPTION3 + " TEXT, "+
+                QuestionsTable.COLUMN_OPTION4 + " TEXT, "+
                 QuestionsTable.COLUMN_ANSWER_NR + " INTEGER, "+
                 QuestionsTable.COLUMN_DIFFICULTY + " TEXT, "+
                 QuestionsTable.COLUMN_CATEGORY_ID + " INTEGER, "+
@@ -95,18 +96,33 @@ public class QuizDbHelper extends SQLiteOpenHelper {
 
     private void fillQuestionsTable() {
 
-        Question q1 = new Question("أكبر شبه جزيرة في العالم",
-                "شبه الجزيرة العربية", "شبه الجزيرة الأمريكية", "شبه الجزيرة الكورية", 1,
+        Question q1 = new Question(
+                "أكبر شبه جزيرة في العالم",
+                "شبه الجزيرة العربية",
+                "شبه الجزيرة الأمريكية",
+                "شبه الجزيرة الكورية",
+                "شبه الجزيرة الكورية2",
+                1,
                 Question.DIFFICULTY_EASY, Category.GEOGRAPHY);
         addQuestion(q1);
 
-        Question q2 = new Question("أطول نهر في العالم",
-                "نهر الامازون", "نهر النيل", "نهر الفرات ", 2,
+        Question q2 = new Question(
+                "أطول نهر في العالم",
+                "نهر الامازون",
+                "نهر النيل",
+                "نهر الفرات ",
+                "نهر الفرات2 ",
+                2,
                 Question.DIFFICULTY_EASY, Category.GEOGRAPHY);
         addQuestion(q2);
 
-        Question q3 = new Question("يلتقي عندها البحر المتوسط بالبحر الأحمر",
-                "رأس الرجاء الصالح", "قناة السبيل", "قناة السويس", 3,
+        Question q3 = new Question(
+                "يلتقي عندها البحر المتوسط بالبحر الأحمر",
+                "رأس الرجاء الصالح",
+                "رأس الرجاء الصالح2",
+                "قناة السبيل",
+                "قناة السويس",
+                3,
                 Question.DIFFICULTY_EASY, Category.GEOGRAPHY);
         addQuestion(q3);
 
@@ -115,6 +131,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
                 "تركيا",
                 "البحر المتوسط",
                 "العراق",
+                "العراق2",
                 2,
                 Question.DIFFICULTY_EASY, Category.GEOGRAPHY);
         addQuestion(q4);
@@ -122,6 +139,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         Question q5 = new Question(
                 "صحابي صلى النبي على آله فقال اللهم صلى على آل ابي فلان من هو",
                 "أبو بكر ",
+                "أبو بكر 1",
                 "ابن أبي أوفى",
                 "عمر الخطاب ",
                 2,
@@ -132,6 +150,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
                 "صحابي فداه النبي بأبيه وأمه يوم أحد فقال ارم فداك أبي وأمي",
                 "علي بن أبي طالب ",
                 "حمزة بن عبدالمطلب ",
+                "حمزة بن عبدالمطلب 2",
                 "سعد بن مالك",
                 3,
                 Question.DIFFICULTY_EASY, Category.ISLAMIC);
@@ -140,6 +159,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         Question q7 = new Question(
                 "بماذا كانت تسمى المدينة النبوية قبل الهجرة",
                 "يثرب",
+                "مكة2",
                 "مكة",
                 "الطائف",
                 1,
@@ -149,6 +169,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         Question q8 = new Question(
                 "من هو أبو الأنبياء",
                 "إسماعيل ",
+                "نوح2",
                 "نوح",
                 "إبراهيم",
                 3,
@@ -160,6 +181,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
                 "آية الدين",
                 "آية الكرسي ",
                 "آية الربا",
+                "آية الربا2",
                 2,
                 Question.DIFFICULTY_EASY, Category.ISLAMIC);
         addQuestion(q9);
@@ -168,6 +190,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
                 "ما هي أعظم سورة في القرآن الكريم",
                 "الفاتحة",
                 "آل عمران",
+                "آل عمران2",
                 "البقرة",
                 1,
                 Question.DIFFICULTY_EASY, Category.ISLAMIC);
@@ -175,6 +198,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
 
         Question q11 = new Question(
                 "سيف سله الله على الكافرين",
+                "علي بن أبي طالب2",
                 "علي بن أبي طالب",
                 "خالد بن الوليد",
                 "عمر بن الخطاب",
@@ -191,6 +215,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         cv.put(QuestionsTable.COLUMN_OPTION1, question.getOption1());
         cv.put(QuestionsTable.COLUMN_OPTION2, question.getOption2());
         cv.put(QuestionsTable.COLUMN_OPTION3, question.getOption3());
+        cv.put(QuestionsTable.COLUMN_OPTION4, question.getOption4());
         cv.put(QuestionsTable.COLUMN_ANSWER_NR, question.getAnswerNr());
         cv.put(QuestionsTable.COLUMN_DIFFICULTY, question.getDifficulty());
         cv.put(QuestionsTable.COLUMN_CATEGORY_ID, question.getCategoryID());
@@ -226,6 +251,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
                 question.setOption1(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION1)));
                 question.setOption2(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION2)));
                 question.setOption3(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION3)));
+                question.setOption4(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION4)));
                 question.setAnswerNr(c.getInt(c.getColumnIndex(QuestionsTable.COLUMN_ANSWER_NR)));
                 question.setDifficulty(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_DIFFICULTY)));
                 question.setCategoryID(c.getInt(c.getColumnIndex(QuestionsTable.COLUMN_CATEGORY_ID)));
@@ -262,6 +288,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
                 question.setOption1(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION1)));
                 question.setOption2(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION2)));
                 question.setOption3(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION3)));
+                question.setOption4(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION4)));
                 question.setAnswerNr(c.getInt(c.getColumnIndex(QuestionsTable.COLUMN_ANSWER_NR)));
                 question.setDifficulty(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_DIFFICULTY)));
                 question.setCategoryID(c.getInt(c.getColumnIndex(QuestionsTable.COLUMN_CATEGORY_ID)));

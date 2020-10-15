@@ -41,6 +41,7 @@
         android:layout_below="@id/text_view_category"
         android:text="@string/quiz_page_difficulty_text"
         android:textColor="@color/quiz_page_text"
+        android:layout_marginBottom="16dp"
         android:freezesText="true"/>
 
     <TextView
@@ -92,6 +93,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/quiz_page_option_three_text"
+            android:textColor="@color/quiz_page_text"
+            android:freezesText="true"/>
+
+        <RadioButton
+            android:id="@+id/radio_button4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/quiz_page_option_four_text"
             android:textColor="@color/quiz_page_text"
             android:freezesText="true"/>
     </RadioGroup>

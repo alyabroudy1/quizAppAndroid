@@ -44,6 +44,7 @@ public class QuizActivity extends AppCompatActivity {
     private RadioButton rb1;
     private RadioButton rb2;
     private RadioButton rb3;
+    private RadioButton rb4;
 
     private Button buttonConfirmNext;
 
@@ -83,6 +84,7 @@ public class QuizActivity extends AppCompatActivity {
         rb1 = findViewById(R.id.radio_button1);
         rb2 = findViewById(R.id.radio_button2);
         rb3 = findViewById(R.id.radio_button3);
+        rb4 = findViewById(R.id.radio_button4);
         buttonConfirmNext = findViewById(R.id.button_confirm_next);
 
         textColorDefaultRb = rb1.getTextColors();
@@ -95,8 +97,8 @@ public class QuizActivity extends AppCompatActivity {
         String categoryName = intent.getStringExtra(StartingScreenActivity.EXTRA_CATEGORY_NAME);
         String difficulty = intent.getStringExtra(StartingScreenActivity.EXTRA_DIFFICULTY);
 
-        textViewDifficulty.setText("Difficulty: " + difficulty);
-        textViewCategory.setText("Category: " + categoryName);
+        textViewDifficulty.setText(String.format("%s%s", getResources().getString(R.string.quiz_page_difficulty_text), difficulty));
+        textViewCategory.setText(String.format("%s%s", getResources().getString(R.string.quiz_page_category_text), categoryName));
 
         //check if the app i restored from a destroyed activity like rotate
         if (savedInstanceState == null) {
@@ -128,10 +130,10 @@ public class QuizActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (!answered){
-                    if (rb1.isChecked() || rb2.isChecked() || rb3.isChecked()){
+                    if (rb1.isChecked() || rb2.isChecked() || rb3.isChecked() || rb4.isChecked()){
                         checkAnswer();
                     }else {
-                        Toast.makeText(QuizActivity.this, "Please Select an answer", Toast.LENGTH_LONG).show();
+                        Toast.makeText(QuizActivity.this, getResources().getString(R.string.quiz_page_select_answer_text), Toast.LENGTH_LONG).show();
                     }
                 }else {
                     showNextQuestion();
@@ -145,6 +147,7 @@ public class QuizActivity extends AppCompatActivity {
         rb1.setTextColor(textColorDefaultRb); //set radioButton color to its default
         rb2.setTextColor(textColorDefaultRb);
         rb3.setTextColor(textColorDefaultRb);
+        rb4.setTextColor(textColorDefaultRb);
         rbGroup.clearCheck(); //clear the previous selection
 
         if (questionCounter < questionCounterTotal){
@@ -154,11 +157,13 @@ public class QuizActivity extends AppCompatActivity {
             rb1.setText(currentQuestion.getOption1());
             rb2.setText(currentQuestion.getOption2());
             rb3.setText(currentQuestion.getOption3());
+            rb4.setText(currentQuestion.getOption4());
 
             questionCounter++;
-            textViewQuestionCount.setText("Question: "+questionCounter + "/" + questionCounterTotal);
+            textViewQuestionCount.setText(String.format("%s%s/%s", getResources().getString(R.string.quiz_page_question_count_text),questionCounter, questionCounterTotal));
             answered= false;
-            buttonConfirmNext.setText("Confirm");
+            buttonConfirmNext.setText(getResources().getString(R.string.quiz_page_confirm_next_text));
+            //buttonConfirmNext.setText("Confirm");
 
             //start the time counter
             timeLeftInMillis = COUNTDOWN_IN_MILLIS;
@@ -209,7 +214,7 @@ public class QuizActivity extends AppCompatActivity {
         int answerNr = rbGroup.indexOfChild(rbSelected) + 1; // to get the index of the selected button and as our answer starts from one, we add one to the index
         if (answerNr == currentQuestion.getAnswerNr()){//compare user answer with the correct answer
             score++;
-            textViewScore.setText("Score: "+ score);
+            textViewScore.setText(String.format("%s%s", getResources().getString(R.string.quiz_page_score_text), score));
         }
         showSolution();
     }
@@ -218,25 +223,30 @@ public class QuizActivity extends AppCompatActivity {
         rb1.setTextColor(Color.RED);
         rb2.setTextColor(Color.RED);
         rb3.setTextColor(Color.RED);
+        rb4.setTextColor(Color.RED);
 
         switch (currentQuestion.getAnswerNr()){
             case 1:
                 rb1.setTextColor(Color.GREEN);
-                textViewQuestion.setText("Answer 1 is correct");
+                textViewQuestion.setText(getResources().getString(R.string.quiz_page_first_answer_correct_text));
                 break;
             case 2:
                 rb2.setTextColor(Color.GREEN);
-                textViewQuestion.setText("Answer 2 is correct");
+                textViewQuestion.setText(getResources().getString(R.string.quiz_page_second_answer_correct_text));
                 break;
             case 3:
                 rb3.setTextColor(Color.GREEN);
-                textViewQuestion.setText("Answer 3 is correct");
+                textViewQuestion.setText(getResources().getString(R.string.quiz_page_third_answer_correct_text));
+                break;
+            case 4:
+                rb4.setTextColor(Color.GREEN);
+                textViewQuestion.setText(getResources().getString(R.string.quiz_page_fourth_answer_correct_text));
                 break;
         }
         if (questionCounter < questionCounterTotal){
-            buttonConfirmNext.setText("Next");
+            buttonConfirmNext.setText(getResources().getString(R.string.quiz_page_next_text));
         }else {
-            buttonConfirmNext.setText("Finish");
+            buttonConfirmNext.setText(getResources().getString(R.string.quiz_page_finish_text));
         }
     }
 
@@ -255,7 +265,7 @@ public class QuizActivity extends AppCompatActivity {
         if (backPressedTime + 2000 > System.currentTimeMillis()){
             finishQuiz();
         }else {
-            Toast.makeText(this, "Press back again to finish", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getResources().getString(R.string.quiz_page_press_back_to_exit_text), Toast.LENGTH_SHORT).show();
         }
         backPressedTime = System.currentTimeMillis();
     }

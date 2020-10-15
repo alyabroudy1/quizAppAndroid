@@ -2,11 +2,11 @@ package com.example.quiz;
 
 public class Category {
     public static final int ISLAMIC = 1;
-    public static final String ISLAMIC_CATEGORY_NAME ="Islamic";
+    public static final String ISLAMIC_CATEGORY_NAME ="اسلامي";
     public static final int GEOGRAPHY = 2;
-    public static final String GEOGRAPHY_CATEGORY_NAME ="Geography";
+    public static final String GEOGRAPHY_CATEGORY_NAME ="جغرافیا";
     public static final int MATH = 3;
-    public static final String MATH_CATEGORY_NAME ="Math";
+    public static final String MATH_CATEGORY_NAME ="رياضيات";
 
     private int id;
     private String name;

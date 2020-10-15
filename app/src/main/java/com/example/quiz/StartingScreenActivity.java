@@ -108,12 +108,12 @@ public class StartingScreenActivity extends AppCompatActivity {
     private void loadHighScore(){
         SharedPreferences prefs = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         highScore = prefs.getInt(KEY_HIGH_SCORE, 0);
-        textViewHighScore.setText("HighScore: "+ highScore);
+        textViewHighScore.setText(String.format("%s%s", getResources().getString(R.string.home_page_high_score_text), highScore));
     }
 
     private void updateHighScore(int highScoreNew) {
         highScore = highScoreNew;
-        textViewHighScore.setText("HighScore: "+ highScore);
+        textViewHighScore.setText(String.format("%s%s", getResources().getString(R.string.home_page_high_score_text), highScore));
         SharedPreferences prefs = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
         editor.putInt(KEY_HIGH_SCORE, highScore);
