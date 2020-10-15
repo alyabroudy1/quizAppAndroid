@@ -112,7 +112,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
                 "نهر النيل",
                 "نهر الفرات ",
                 "نهر الفرات2 ",
-                2,
+                3,
                 Question.DIFFICULTY_EASY, Category.GEOGRAPHY);
         addQuestion(q2);
 
@@ -122,7 +122,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
                 "رأس الرجاء الصالح2",
                 "قناة السبيل",
                 "قناة السويس",
-                3,
+                4,
                 Question.DIFFICULTY_EASY, Category.GEOGRAPHY);
         addQuestion(q3);
 
@@ -142,7 +142,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
                 "أبو بكر 1",
                 "ابن أبي أوفى",
                 "عمر الخطاب ",
-                2,
+                1,
                 Question.DIFFICULTY_EASY, Category.ISLAMIC);
         addQuestion(q5);
 
@@ -152,7 +152,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
                 "حمزة بن عبدالمطلب ",
                 "حمزة بن عبدالمطلب 2",
                 "سعد بن مالك",
-                3,
+                4,
                 Question.DIFFICULTY_EASY, Category.ISLAMIC);
         addQuestion(q6);
 
@@ -172,7 +172,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
                 "نوح2",
                 "نوح",
                 "إبراهيم",
-                3,
+                4,
                 Question.DIFFICULTY_EASY, Category.ISLAMIC);
         addQuestion(q8);
 
@@ -202,7 +202,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
                 "علي بن أبي طالب",
                 "خالد بن الوليد",
                 "عمر بن الخطاب",
-                2,
+                3,
                 Question.DIFFICULTY_EASY, Category.ISLAMIC);
         addQuestion(q11);
 
