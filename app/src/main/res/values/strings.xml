@@ -11,6 +11,7 @@
     <string name="quiz_page_option_two_text">Option 2 </string>
     <string name="quiz_page_option_three_text">Option 3 </string>
     <string name="quiz_page_option_four_text">Option 4 </string>
+    <string name="quiz_page_answer_description_text">Answer Description </string>
     <string name="quiz_page_confirm_next_text">Confirm </string>
     <string name="quiz_page_next_text">Next </string>
     <string name="quiz_page_finish_text">Finish </string>

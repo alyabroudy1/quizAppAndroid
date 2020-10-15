@@ -105,11 +105,22 @@
             android:freezesText="true"/>
     </RadioGroup>
 
+    <TextView
+        android:id="@+id/text_view_answer_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/radio_group"
+        android:layout_marginBottom="5dp"
+        android:textAlignment="center"
+        android:text="@string/quiz_page_answer_description_text"
+        android:textColor="@color/quiz_page_text"
+        android:freezesText="true"/>
+
     <Button
         android:id="@+id/button_confirm_next"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/radio_group"
+        android:layout_below="@id/text_view_answer_description"
         android:layout_marginTop="16dp"
         android:text="@string/quiz_page_confirm_next_text"
         android:freezesText="true"/>

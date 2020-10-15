@@ -46,6 +46,7 @@ public class QuizActivity extends AppCompatActivity {
     private RadioButton rb3;
     private RadioButton rb4;
 
+    private TextView textViewAnswerDescription;
     private Button buttonConfirmNext;
 
     private ColorStateList textColorDefaultRb; //hold the default color value of the radio buttons
@@ -85,6 +86,7 @@ public class QuizActivity extends AppCompatActivity {
         rb2 = findViewById(R.id.radio_button2);
         rb3 = findViewById(R.id.radio_button3);
         rb4 = findViewById(R.id.radio_button4);
+        textViewAnswerDescription = findViewById(R.id.text_view_answer_description);
         buttonConfirmNext = findViewById(R.id.button_confirm_next);
 
         textColorDefaultRb = rb1.getTextColors();
@@ -162,6 +164,7 @@ public class QuizActivity extends AppCompatActivity {
             questionCounter++;
             textViewQuestionCount.setText(String.format("%s%s/%s", getResources().getString(R.string.quiz_page_question_count_text),questionCounter, questionCounterTotal));
             answered= false;
+            textViewAnswerDescription.setText("");
             buttonConfirmNext.setText(getResources().getString(R.string.quiz_page_confirm_next_text));
             //buttonConfirmNext.setText("Confirm");
 
@@ -243,6 +246,7 @@ public class QuizActivity extends AppCompatActivity {
                 textViewQuestion.setText(getResources().getString(R.string.quiz_page_fourth_answer_correct_text));
                 break;
         }
+        textViewAnswerDescription.setText(currentQuestion.getAnswerDescription());
         if (questionCounter < questionCounterTotal){
             buttonConfirmNext.setText(getResources().getString(R.string.quiz_page_next_text));
         }else {

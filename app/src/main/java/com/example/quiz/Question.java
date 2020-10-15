@@ -16,6 +16,7 @@ public class Question implements Parcelable {
     private String option3;
     private String option4;
     private int answerNr;
+    private String answerDescription;
     private String difficulty;
     private int categoryID;
 
@@ -23,13 +24,14 @@ public class Question implements Parcelable {
     public Question(){}
 
     public Question(String question, String option1, String option2,
-                    String option3, String option4, int answerNr, String difficulty, int categoryID) {
+                    String option3, String option4, int answerNr, String answerDescription,String difficulty, int categoryID) {
         this.question = question;
         this.option1 = option1;
         this.option2 = option2;
         this.option3 = option3;
         this.option4 = option4;
         this.answerNr = answerNr;
+        this.answerDescription = answerDescription;
         this.difficulty = difficulty;
         this.categoryID = categoryID;
     }
@@ -42,6 +44,7 @@ public class Question implements Parcelable {
         option3 = in.readString();
         option4 = in.readString();
         answerNr = in.readInt();
+        answerDescription = in.readString();
         difficulty = in.readString();
         categoryID = in.readInt();
     }
@@ -55,6 +58,7 @@ public class Question implements Parcelable {
         dest.writeString(option3);
         dest.writeString(option4);
         dest.writeInt(answerNr);
+        dest.writeString(answerDescription);
         dest.writeString(difficulty);
         dest.writeInt(categoryID);
     }
@@ -130,6 +134,14 @@ public class Question implements Parcelable {
 
     public void setAnswerNr(int answerNr) {
         this.answerNr = answerNr;
+    }
+
+    public String getAnswerDescription() {
+        return answerDescription;
+    }
+
+    public void setAnswerDescription(String answerDescription) {
+        this.answerDescription = answerDescription;
     }
 
     public String getDifficulty() {

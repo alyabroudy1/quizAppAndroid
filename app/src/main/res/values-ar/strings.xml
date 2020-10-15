@@ -12,6 +12,7 @@
     <string name="quiz_page_option_two_text">الخيار الثاني </string>
     <string name="quiz_page_option_three_text"> الخيار الثالث </string>
     <string name="quiz_page_option_four_text">الخيار الرابع </string>
+    <string name="quiz_page_answer_description_text">  تنويه عن الإجابة </string>
     <string name="quiz_page_confirm_next_text"> تأكيد </string>
     <string name="quiz_page_next_text">السؤال التالي </string>
     <string name="quiz_page_finish_text">إنهاء الاختبار </string>
