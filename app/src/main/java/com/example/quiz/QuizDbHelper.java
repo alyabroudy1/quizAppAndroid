@@ -79,11 +79,11 @@ public class QuizDbHelper extends SQLiteOpenHelper {
     }
 
     private void fillCategoriesTable() {
-        Category c1 = new Category("Programming");
+        Category c1 = new Category(Category.ISLAMIC_CATEGORY_NAME);
         addCategory(c1);
-        Category c2 = new Category("Geography");
+        Category c2 = new Category(Category.GEOGRAPHY_CATEGORY_NAME);
         addCategory(c2);
-        Category c3 = new Category("Math");
+        Category c3 = new Category(Category.MATH_CATEGORY_NAME);
         addCategory(c3);
     }
 
@@ -125,7 +125,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
                 "ابن أبي أوفى",
                 "عمر الخطاب ",
                 2,
-                Question.DIFFICULTY_EASY, Category.PROGRAMMING);
+                Question.DIFFICULTY_EASY, Category.ISLAMIC);
         addQuestion(q5);
 
         Question q6 = new Question(
@@ -134,7 +134,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
                 "حمزة بن عبدالمطلب ",
                 "سعد بن مالك",
                 3,
-                Question.DIFFICULTY_EASY, Category.PROGRAMMING);
+                Question.DIFFICULTY_EASY, Category.ISLAMIC);
         addQuestion(q6);
 
         Question q7 = new Question(
@@ -143,7 +143,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
                 "مكة",
                 "الطائف",
                 1,
-                Question.DIFFICULTY_EASY, Category.PROGRAMMING);
+                Question.DIFFICULTY_EASY, Category.ISLAMIC);
         addQuestion(q7);
 
         Question q8 = new Question(
@@ -152,7 +152,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
                 "نوح",
                 "إبراهيم",
                 3,
-                Question.DIFFICULTY_EASY, Category.PROGRAMMING);
+                Question.DIFFICULTY_EASY, Category.ISLAMIC);
         addQuestion(q8);
 
         Question q9 = new Question(
@@ -161,7 +161,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
                 "آية الكرسي ",
                 "آية الربا",
                 2,
-                Question.DIFFICULTY_EASY, Category.PROGRAMMING);
+                Question.DIFFICULTY_EASY, Category.ISLAMIC);
         addQuestion(q9);
 
         Question q10 = new Question(
@@ -170,7 +170,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
                 "آل عمران",
                 "البقرة",
                 1,
-                Question.DIFFICULTY_EASY, Category.PROGRAMMING);
+                Question.DIFFICULTY_EASY, Category.ISLAMIC);
         addQuestion(q10);
 
         Question q11 = new Question(
@@ -179,7 +179,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
                 "خالد بن الوليد",
                 "عمر بن الخطاب",
                 2,
-                Question.DIFFICULTY_EASY, Category.PROGRAMMING);
+                Question.DIFFICULTY_EASY, Category.ISLAMIC);
         addQuestion(q11);
 
 
