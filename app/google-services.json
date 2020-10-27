@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "539941290273",
+    "firebase_url": "https://questions-cd3e2.firebaseio.com",
+    "project_id": "questions-cd3e2",
+    "storage_bucket": "questions-cd3e2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:539941290273:android:cbf107dbb080575238be60",
+        "android_client_info": {
+          "package_name": "com.example.quiz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "539941290273-h8v0mgrfk3irh60khdfasmr4ngdeu5re.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2Y9Wro0A1lLhQhLtWREMP_TVzqtJEmxY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "539941290273-h8v0mgrfk3irh60khdfasmr4ngdeu5re.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:539941290273:android:beea6e66b11cd94738be60",
+        "android_client_info": {
+          "package_name": "com.worldpeace.issuesmonitor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "539941290273-h8v0mgrfk3irh60khdfasmr4ngdeu5re.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2Y9Wro0A1lLhQhLtWREMP_TVzqtJEmxY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "539941290273-h8v0mgrfk3irh60khdfasmr4ngdeu5re.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

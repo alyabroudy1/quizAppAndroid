@@ -4,6 +4,7 @@
     <string name="home_page_title">اسئلة </string>
     <string name="home_page_high_score_text">اعلى درجة: </string>
     <string name="home_page_button_text">ابدأ الاختبار </string>
+    <string name="home_page_level_text">مستوى </string>
     <string name="quiz_page_score_text">الدرجة: </string>
     <string name="quiz_page_question_count_text">السؤال: </string>
     <string name="quiz_page_countdown_text">00:30</string>
@@ -16,7 +17,7 @@
     <string name="quiz_page_confirm_next_text"> تأكيد </string>
     <string name="quiz_page_next_text">السؤال التالي </string>
     <string name="quiz_page_finish_text">إنهاء الاختبار </string>
-    <string name="quiz_page_difficulty_text">الصعوبة: </string>
+    <string name="quiz_page_level_text">المستوى: </string>
     <string name="quiz_page_category_text">الفئة: </string>
     <string name="quiz_page_select_answer_text">الرجاء تحديد إجابة </string>
     <string name="quiz_page_first_answer_correct_text"> الإجابة الأولى هي صحيحة </string>
@@ -24,4 +25,7 @@
     <string name="quiz_page_third_answer_correct_text">الإجابة الثالثة هي صحيحة </string>
     <string name="quiz_page_fourth_answer_correct_text">الإجابة الرابعة هي صحيحة </string>
     <string name="quiz_page_press_back_to_exit_text">اضغط رجوع مرة أخرى للخروج </string>
+    <array name="levels">
+        <item>"1"</item><item>"2"</item><item>"3"</item><item>"4"</item><item>"5"</item><item>"6"</item><item>"7"</item><item>"8"</item><item>"9"</item><item>"10"</item>
+    </array>
 </resources>

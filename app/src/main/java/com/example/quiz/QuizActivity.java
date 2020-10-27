@@ -1,14 +1,12 @@
 package com.example.quiz;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.PersistableBundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
@@ -16,9 +14,11 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 import java.util.Locale;
 
 public class QuizActivity extends AppCompatActivity {
@@ -79,7 +79,7 @@ public class QuizActivity extends AppCompatActivity {
         textViewScore = findViewById(R.id.text_view_score);
         textViewQuestionCount = findViewById(R.id.text_view_question_count);
         TextView textViewCategory = findViewById(R.id.text_view_category);
-        TextView textViewDifficulty = findViewById(R.id.text_view_difficulty);
+        TextView textViewLevel = findViewById(R.id.text_view_level);
         textViewCountDown = findViewById(R.id.text_view_countdown);
         rbGroup = findViewById(R.id.radio_group);
         rb1 = findViewById(R.id.radio_button1);
@@ -93,24 +93,26 @@ public class QuizActivity extends AppCompatActivity {
         //save text color of time counter
         textColorDefaultCd = textViewCountDown.getTextColors();
 
-        //retrieve difficulty value from the previous activity
+        //retrieve level value from the previous activity
         Intent intent = getIntent();
-        int categoryID = intent.getIntExtra(StartingScreenActivity.EXTRA_CATEGORY_ID, 0);
+        int categoryID = intent.getIntExtra(StartingScreenActivity.EXTRA_CATEGORY_ID, 1);
         String categoryName = intent.getStringExtra(StartingScreenActivity.EXTRA_CATEGORY_NAME);
-        String difficulty = intent.getStringExtra(StartingScreenActivity.EXTRA_DIFFICULTY);
+        int level = intent.getIntExtra(StartingScreenActivity.EXTRA_LEVEL, 1);
 
-        textViewDifficulty.setText(String.format("%s%s", getResources().getString(R.string.quiz_page_difficulty_text), difficulty));
+        textViewLevel.setText(String.format("%s%s", getResources().getString(R.string.quiz_page_level_text), level));
         textViewCategory.setText(String.format("%s%s", getResources().getString(R.string.quiz_page_category_text), categoryName));
 
         //check if the app i restored from a destroyed activity like rotate
         if (savedInstanceState == null) {
+            //if its new the nwe get questions from database
             QuizDbHelper dbHelper = QuizDbHelper.getInstance(this);
-            questionList = dbHelper.getQuestions(categoryID, difficulty);
+            questionList = dbHelper.getQuestions(categoryID, level);
+            Log.i("levels:", "count "+questionList.size()+" in list");
             questionCounterTotal = questionList.size();
             Collections.shuffle(questionList); //to get the questions in the list at a random order
 
             showNextQuestion();
-        }else {
+        }else {//if its restored from destroy or screen rotated load from a saved state
             questionList = savedInstanceState.getParcelableArrayList(KEY_QUESTION_LIST);
             questionCounterTotal = questionList.size();
             questionCounter = savedInstanceState.getInt(KEY_QUESTION_COUNT);
@@ -215,7 +217,7 @@ public class QuizActivity extends AppCompatActivity {
 
         RadioButton rbSelected = findViewById(rbGroup.getCheckedRadioButtonId()); //to get the checked radioButton out of our rbGroup
         int answerNr = rbGroup.indexOfChild(rbSelected) + 1; // to get the index of the selected button and as our answer starts from one, we add one to the index
-        if (answerNr == currentQuestion.getAnswerNr()){//compare user answer with the correct answer
+        if ( answerNr == currentQuestion.getAnswerNr() ){//compare user answer with the correct answer
             score++;
             textViewScore.setText(String.format("%s%s", getResources().getString(R.string.quiz_page_score_text), score));
         }

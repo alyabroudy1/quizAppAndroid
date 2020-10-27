@@ -35,11 +35,11 @@
         android:freezesText="true"/>
 
     <TextView
-        android:id="@+id/text_view_difficulty"
+        android:id="@+id/text_view_level"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/text_view_category"
-        android:text="@string/quiz_page_difficulty_text"
+        android:text="@string/quiz_page_level_text"
         android:textColor="@color/quiz_page_text"
         android:layout_marginBottom="16dp"
         android:freezesText="true"/>

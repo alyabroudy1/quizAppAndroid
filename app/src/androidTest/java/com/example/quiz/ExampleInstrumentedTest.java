@@ -21,6 +21,7 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
+        QuizDbHelper db = QuizDbHelper.getInstance(appContext);
         assertEquals("com.example.quiz", appContext.getPackageName());
     }
 }

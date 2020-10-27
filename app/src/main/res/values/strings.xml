@@ -3,6 +3,7 @@
     <string name="home_page_title">Quiz</string>
     <string name="home_page_high_score_text">High score: </string>
     <string name="home_page_button_text">Start Quiz </string>
+    <string name="home_page_level_text">Level </string>
     <string name="quiz_page_score_text">Score: </string>
     <string name="quiz_page_question_count_text">Question: </string>
     <string name="quiz_page_countdown_text">00:30</string>
@@ -15,7 +16,7 @@
     <string name="quiz_page_confirm_next_text">Confirm </string>
     <string name="quiz_page_next_text">Next </string>
     <string name="quiz_page_finish_text">Finish </string>
-    <string name="quiz_page_difficulty_text">Difficulty: </string>
+    <string name="quiz_page_level_text">Level: </string>
     <string name="quiz_page_category_text">Category: </string>
     <string name="quiz_page_select_answer_text">Please select an answer </string>
     <string name="quiz_page_first_answer_correct_text">First answer is correct </string>
@@ -23,4 +24,7 @@
     <string name="quiz_page_third_answer_correct_text">Third answer is correct </string>
     <string name="quiz_page_fourth_answer_correct_text">Fourth answer is correct </string>
     <string name="quiz_page_press_back_to_exit_text">Press back again to finish </string>
+    <array name="levels">
+        <item>"1"</item><item>"2"</item><item>"3"</item><item>"4"</item><item>"5"</item><item>"6"</item><item>"7"</item><item>"8"</item><item>"9"</item><item>"10"</item>
+    </array>
 </resources>
