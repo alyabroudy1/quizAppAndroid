@@ -1,0 +1,115 @@
+<!doctype html>
+
+<!-- Web page "World Peace Issue List"  -->
+<!-- Created by Harrison Kong           -->
+<!-- Copyright (C) Coursera 2020        -->
+
+<html lang="en">
+
+<header>
+
+<meta charset="UTF-8">
+<link rel="FaviconIcon" href="worldpeace1.ico?v=1" type="image/x-icon">
+<link rel="shortcut icon" href="worldpeace1.ico?v=1" type="image/x-icon">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv=“Pragma” content=”no-cache”>
+<meta http-equiv=“Expires” content=”-1″>
+<meta http-equiv=“CACHE-CONTROL” content=”NO-CACHE”>
+<!-- CSS Stylesheets -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<link rel="stylesheet" href="css/worldpeace.css?v=1">
+
+<title>World Peace Gifts IT Issue List</title>
+
+</header>
+
+<body>
+
+<img class="hero" src="images/banner.jpg" alt="banner">
+
+<h1 class='section-heading'><img class="logo" src="images/logo.png" alt="logo" />&nbsp;World Peace Gifts</h1>
+<h2 class='section-subheading'>QuizAndroidApp</h2>
+<h3 class='section-subheading'>Questions List</h3>
+
+<div class="results-div">
+  <table>
+    <col width="1%"><col width="10%"><col width="5%"><col width="10%"><col width="10%"><col width="10%"><col width="10%"><col width="43%"><col width="1%">
+    <thead class="highlight-cell">
+      <th>Delete</th>
+      <th>Level</th>
+      <th>CategoryID</th>
+      <th>AnswerDescription</th>
+      <th>AnswerNr</th>
+      <th>Option4</th>
+      <th>Option3</th>
+      <th>Option2</th>
+      <th>Option1</th>
+      <th>Question</th>
+      <th>ID</th></thead>
+
+    <tbody id="list-table-body"></tbody>
+
+    <tfoot class="empty-cell">
+      <td></td>
+      <td>
+        <input class="textfield" id="level-textfield" type="text" name="level-textfield" placeholder="المستوى  ١ - ١٠"/>
+      </td>
+      <td>
+        <input class="textfield" id="categoryID-textfield" type="text" name="categoryID-textfield" placeholder="الفئة: ١=اسلامي , ٢=جغرافية, ٣=رياضيات" />
+      </td>
+      <td>
+        <input class="textfield" id="answerDescription-textfield" type="text" name="answerDescription-textfield" placeholder="التنويه" />
+      </td>
+      <td>
+        <input class="textfield" id="answerNr-textfield" type="text" name="answerNr-textfield" placeholder="الجواب" />
+      </td>
+      <td>
+        <input class="textfield" id="option4-textfield" type="text" name="option4-textfield" placeholder="الخيار 4" />
+      </td>
+      <td>
+        <input class="textfield" id="option3-textfield" type="text" name="option3-textfield" placeholder="الخيار 3" />
+      </td>
+      <td>
+        <input class="textfield" id="option2-textfield" type="text" name="option2-textfield" placeholder="الخيار 2" />
+      </td>
+      <td>
+        <input class="textfield" id="option1-textfield" type="text" name="option1-textfield" placeholder="الخيار 1"/>
+      </td>
+      <td>
+        <input class="textfield" id="question-textfield" type="text" name="question-textfield" placeholder="السؤال" />
+      </td>
+      <td></td>
+    </tfoot>
+  </table>
+  <div class="button">
+    <input class="button btn btn-primary" value="Add New Question" id="addButton" onclick="addNewQuestion()" />
+  </div>
+</div>
+
+</body>
+
+<footer>
+  <div class="section-divider"><img src="images/infinity-line.png"></div>
+
+  <br />
+  <p><code class="copyright-text">Powered by <a href="https://firebase.google.com/" target= "_blank">🔥 Google Firebase</a></code></p>
+
+  <code class="copyright-text">Crafted with ❤️ at <a href="https://coursera.org/" target= "_blank">Coursera</a></code>
+
+</footer>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-analytics.js"></script>
+
+<!-- STEP 2: ADD the database LIBRARY -->
+<script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-database.js"></script>
+<!-- Our codes -->
+<script src="js/worldpeaceissues.js?v=1"></script>
+
+
+</html>
